@@ -209,3 +209,4 @@ The application is pre-configured for Vercel deployment:
 - Build command: `npm run build`
 - Output directory: `dist`
 - No secret environment variables or API keys required.
+

@@ -112,3 +112,4 @@ export const CreditsModal: React.FC = () => {
     </div>
   );
 };
+

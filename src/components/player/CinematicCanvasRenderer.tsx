@@ -441,3 +441,4 @@ function drawCinematicHUD(
 
   ctx.restore();
 }
+

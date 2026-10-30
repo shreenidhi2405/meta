@@ -34,6 +34,55 @@ if (typeof globalThis !== 'undefined') {
   });
 }
 
+// Mock SpeechSynthesis API
+class SpeechSynthesisUtteranceMock {
+  public text: string = '';
+  public voice: SpeechSynthesisVoice | null = null;
+  public volume: number = 1;
+  public rate: number = 1;
+  public pitch: number = 1;
+  public onend: (() => void) | null = null;
+  public onerror: (() => void) | null = null;
+
+  constructor(text: string = '') {
+    this.text = text;
+  }
+}
+
+const speechSynthesisMock = {
+  speak: vi.fn(),
+  cancel: vi.fn(),
+  pause: vi.fn(),
+  resume: vi.fn(),
+  getVoices: vi.fn().mockReturnValue([
+    { name: 'Microsoft David Desktop - English (United States)', lang: 'en-US' },
+    { name: 'Microsoft Zira Desktop - English (United States)', lang: 'en-US' },
+    { name: 'Google UK English Male', lang: 'en-GB' },
+  ]),
+  onvoiceschanged: null,
+};
+
+Object.defineProperty(window, 'SpeechSynthesisUtterance', {
+  writable: true,
+  value: SpeechSynthesisUtteranceMock,
+});
+
+Object.defineProperty(window, 'speechSynthesis', {
+  writable: true,
+  value: speechSynthesisMock,
+});
+
+if (typeof globalThis !== 'undefined') {
+  Object.defineProperty(globalThis, 'SpeechSynthesisUtterance', {
+    writable: true,
+    value: SpeechSynthesisUtteranceMock,
+  });
+  Object.defineProperty(globalThis, 'speechSynthesis', {
+    writable: true,
+    value: speechSynthesisMock,
+  });
+}
+
 // Mock Web Audio API for tests
 class AudioContextMock {
   public state = 'running';

@@ -241,3 +241,4 @@ export const MasterTimelineBar: React.FC<MasterTimelineBarProps> = ({
     </div>
   );
 };
+

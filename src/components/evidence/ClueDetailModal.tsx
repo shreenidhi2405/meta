@@ -218,3 +218,4 @@ export const ClueDetailModal: React.FC<ClueDetailModalProps> = ({
     </div>
   );
 };
+

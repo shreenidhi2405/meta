@@ -20,6 +20,7 @@ export const CinematicPlayer: React.FC = () => {
     inspectClue,
     updateSettings,
     restartExperience,
+    replayCurrentDialogue,
     setCurrentPage,
     setIsSettingsOpen,
     setIsCreditsOpen,
@@ -132,11 +133,13 @@ export const CinematicPlayer: React.FC = () => {
             onClueClick={(clueId) => discoverClue(clueId)}
           />
 
-          {/* Cinematic Subtitles */}
+          {/* Cinematic Subtitles with Character Voice Sync */}
           <SubtitleOverlay
             dialogue={activeDialogue}
             enabled={settings.subtitlesEnabled}
             activePerspective={activePerspective}
+            isSpeaking={state.isSpeaking}
+            onReplayVoice={replayCurrentDialogue}
           />
         </div>
       </main>

@@ -68,3 +68,4 @@ export const ClueHotspotOverlay: React.FC<ClueHotspotOverlayProps> = ({
     </div>
   );
 };
+

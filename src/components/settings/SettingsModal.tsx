@@ -1,12 +1,43 @@
 import React from 'react';
 import { useStory } from '../../engine/StoryContext';
-import { X, Volume2, VolumeX, Subtitles, Sparkles, Maximize2, Gauge, Sliders } from 'lucide-react';
+import { X, Volume2, VolumeX, Subtitles, Sparkles, Maximize2, Gauge, Sliders, Mic, Play } from 'lucide-react';
 
 export const SettingsModal: React.FC = () => {
-  const { state, updateSettings, isSettingsOpen, setIsSettingsOpen } = useStory();
+  const { engine, state, updateSettings, isSettingsOpen, setIsSettingsOpen } = useStory();
   const { settings } = state;
 
   if (!isSettingsOpen) return null;
+
+  const testCharacterVoice = (perspectiveId: 'witness' | 'suspect' | 'victim') => {
+    const voiceEngine = engine.getVoiceEngine();
+    voiceEngine.unlock();
+
+    let testText = '';
+    let speaker = '';
+    if (perspectiveId === 'witness') {
+      speaker = 'Marcus Ward';
+      testText = '11:41 PM. I saw him back her right up against the edge. She had nowhere left to run.';
+    } else if (perspectiveId === 'suspect') {
+      speaker = 'Julian Mercer';
+      testText = 'Elena, step back from the ledge! Look at me—listen to me! The money is yours, just take your hands off the railing!';
+    } else {
+      speaker = 'Elena Vance';
+      testText = 'He thought I was bluffing. But every word was going straight into the cloud.';
+    }
+
+    voiceEngine.speakDialogue(
+      {
+        id: `test-${perspectiveId}`,
+        perspectiveId,
+        speaker,
+        text: testText,
+        startTime: 0,
+        endTime: 5,
+        emotionalTone: 'calm',
+      },
+      true
+    );
+  };
 
   return (
     <div
@@ -15,7 +46,7 @@ export const SettingsModal: React.FC = () => {
       data-testid="settings-modal"
     >
       <div
-        className="relative w-full max-w-lg bg-cinema-surface border border-cinema-border rounded-2xl p-6 shadow-2xl space-y-6"
+        className="relative w-full max-w-lg bg-cinema-surface border border-cinema-border rounded-2xl p-6 shadow-2xl space-y-6 max-h-[90vh] overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
@@ -23,7 +54,7 @@ export const SettingsModal: React.FC = () => {
           <div className="flex items-center gap-2.5">
             <Sliders className="w-5 h-5 text-gold" />
             <h2 className="text-lg font-cinematic font-bold text-slate-100">
-              Cinematic Engine Settings
+              Audio & Cinematic Settings
             </h2>
           </div>
           <button
@@ -36,13 +67,81 @@ export const SettingsModal: React.FC = () => {
         </div>
 
         {/* Sliders & Toggles */}
-        <div className="space-y-5 text-xs font-mono">
-          {/* Volume Control */}
+        <div className="space-y-4 text-xs font-mono">
+          {/* Character Voice Acting & Spoken Dialogue */}
+          <div className="bg-cinema-bg p-4 rounded-xl border border-gold/40 space-y-3">
+            <div className="flex items-center justify-between">
+              <span className="flex items-center gap-2 text-gold-light font-bold">
+                <Mic className="w-4 h-4 text-gold" />
+                <span>Character Voice Acting & Speech</span>
+              </span>
+              <button
+                onClick={() => updateSettings({ voiceEnabled: !settings.voiceEnabled })}
+                className={`px-2.5 py-1 rounded text-[10px] border transition-colors ${
+                  settings.voiceEnabled
+                    ? 'bg-gold/20 border-gold text-gold-light font-bold'
+                    : 'bg-cinema-panel border-cinema-border text-slate-500'
+                }`}
+              >
+                {settings.voiceEnabled ? 'VOICES ON' : 'MUTED'}
+              </button>
+            </div>
+
+            <div className="flex items-center justify-between text-slate-300">
+              <span>Voice Volume</span>
+              <span className="text-gold-light font-bold">
+                {Math.round((settings.voiceVolume ?? 1) * 100)}%
+              </span>
+            </div>
+
+            <input
+              type="range"
+              min="0"
+              max="1"
+              step="0.05"
+              value={settings.voiceVolume ?? 1}
+              onChange={(e) => {
+                const val = parseFloat(e.target.value);
+                updateSettings({ voiceVolume: val, voiceEnabled: true });
+              }}
+              className="w-full accent-amber-500 cursor-pointer h-1.5 bg-slate-800 rounded-lg appearance-none"
+            />
+
+            {/* Test Voice Buttons */}
+            <div className="pt-2 border-t border-cinema-border">
+              <span className="text-[10px] text-slate-400 block mb-2">Test Character Voices:</span>
+              <div className="grid grid-cols-3 gap-2">
+                <button
+                  onClick={() => testCharacterVoice('witness')}
+                  className="flex items-center justify-center gap-1.5 px-2 py-1.5 rounded bg-sky-950/60 hover:bg-sky-900/60 border border-sky-800 text-sky-300 text-[10px] transition-colors"
+                >
+                  <Play className="w-2.5 h-2.5 fill-current" />
+                  <span>Marcus</span>
+                </button>
+                <button
+                  onClick={() => testCharacterVoice('suspect')}
+                  className="flex items-center justify-center gap-1.5 px-2 py-1.5 rounded bg-rose-950/60 hover:bg-rose-900/60 border border-rose-800 text-rose-300 text-[10px] transition-colors"
+                >
+                  <Play className="w-2.5 h-2.5 fill-current" />
+                  <span>Julian</span>
+                </button>
+                <button
+                  onClick={() => testCharacterVoice('victim')}
+                  className="flex items-center justify-center gap-1.5 px-2 py-1.5 rounded bg-amber-950/60 hover:bg-amber-900/60 border border-amber-800 text-gold-light text-[10px] transition-colors"
+                >
+                  <Play className="w-2.5 h-2.5 fill-current" />
+                  <span>Elena</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Master Atmosphere Volume Control */}
           <div className="bg-cinema-bg p-4 rounded-xl border border-cinema-border space-y-3">
             <div className="flex items-center justify-between">
               <span className="flex items-center gap-2 text-slate-200">
                 {settings.isMuted ? <VolumeX className="w-4 h-4 text-rose-400" /> : <Volume2 className="w-4 h-4 text-gold" />}
-                <span>Master Volume</span>
+                <span>Master Atmosphere & SFX</span>
               </span>
               <span className="text-gold-light font-bold">
                 {settings.isMuted ? 'Muted' : `${Math.round(settings.volume * 100)}%`}
@@ -91,7 +190,7 @@ export const SettingsModal: React.FC = () => {
             <div className="flex items-center gap-2 text-slate-200">
               <Sparkles className="w-4 h-4 text-sky-400" />
               <div>
-                <span className="block font-semibold">35mm Film Grain Simulation</span>
+                <span className="block font-semibold">35mm Film Grain</span>
                 <span className="text-[10px] text-slate-400 font-sans">
                   Simulate analog photographic celluloid texture
                 </span>

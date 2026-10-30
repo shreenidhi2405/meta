@@ -55,3 +55,4 @@ test.describe('DIRECTOR\'S CUT — Interactive Cinema E2E Workflow', () => {
     await expect(page.locator('[data-testid="cinematic-viewport"]')).toBeVisible();
   });
 });
+

@@ -110,6 +110,8 @@ export interface StoryConfig {
 
 export interface EngineSettings {
   volume: number; // 0 - 1
+  voiceVolume: number; // 0 - 1
+  voiceEnabled: boolean;
   isMuted: boolean;
   subtitlesEnabled: boolean;
   filmGrainEnabled: boolean;
@@ -131,6 +133,7 @@ export interface StoryEngineState {
   isCompleted: boolean;
   activeDialogue: DialogueCue | null;
   visibleClues: Clue[];
+  isSpeaking: boolean;
 }
 
 export type StoryEngineEvent =
@@ -147,3 +150,4 @@ export type StoryEngineEvent =
   | { type: 'CHAPTER_CHANGE'; chapter: StoryChapter };
 
 export type StoryEngineListener = (state: StoryEngineState, event?: StoryEngineEvent) => void;
+

@@ -56,3 +56,4 @@ describe('TimelineManager', () => {
     expect(timeline.getPlaybackRate()).toBe(0.25);
   });
 });
+

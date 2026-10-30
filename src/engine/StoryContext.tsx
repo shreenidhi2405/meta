@@ -22,6 +22,7 @@ interface StoryContextValue {
   selectVerdict: (verdict: VerdictType) => void;
   updateSettings: (settings: Partial<EngineSettings>) => void;
   restartExperience: (preserveClues?: boolean) => void;
+  replayCurrentDialogue: () => void;
   // Modal states
   isSettingsOpen: boolean;
   setIsSettingsOpen: (open: boolean) => void;
@@ -105,6 +106,9 @@ export const StoryProvider: React.FC<{ children: React.ReactNode; initialConfig?
     engine.restartExperience(preserve);
     setCurrentPage('player');
   }, [engine]);
+  const replayCurrentDialogue = useCallback(() => {
+    engine.replayCurrentDialogue();
+  }, [engine]);
 
   const value = useMemo<StoryContextValue>(
     () => ({
@@ -123,6 +127,7 @@ export const StoryProvider: React.FC<{ children: React.ReactNode; initialConfig?
       selectVerdict,
       updateSettings,
       restartExperience,
+      replayCurrentDialogue,
       isSettingsOpen,
       setIsSettingsOpen,
       isCreditsOpen,
@@ -142,6 +147,7 @@ export const StoryProvider: React.FC<{ children: React.ReactNode; initialConfig?
       selectVerdict,
       updateSettings,
       restartExperience,
+      replayCurrentDialogue,
       isSettingsOpen,
       isCreditsOpen,
     ]
@@ -157,3 +163,4 @@ export const useStory = (): StoryContextValue => {
   }
   return context;
 };
+
