@@ -1,0 +1,426 @@
+{
+  "id": "the-last-witness",
+  "title": "The Last Witness",
+  "tagline": "Every perspective tells a different truth.",
+  "genre": "Psychological Thriller / Noir Mystery",
+  "caseNumber": "NYPD-CR-9042",
+  "date": "October 24, 11:42 PM",
+  "location": "Blackwood Heights, 14th Floor Rooftop, New York",
+  "synopsis": "On a torrential autumn night, prominent hedge fund auditor Elena Vance falls fourteen stories to her death from the rain-slicked roof of Blackwood Heights. Below the ledge, three contradictory accounts emerge: an obsessive photographer across the street who swears he witnessed an intentional push, an estranged partner claiming he lunged through the storm to save her, and Elena's own hidden recording exposing a deadly gambit gone horribly wrong.",
+  "duration": 90,
+  "chapters": [
+    {
+      "id": "act-1",
+      "title": "Act I: The Storm on the Parapet",
+      "startTime": 0,
+      "endTime": 22,
+      "description": "11:41 PM. Torrential rain lashes the rooftop gravel. Shadows converge near the edge."
+    },
+    {
+      "id": "act-2",
+      "title": "Act II: The Confrontation",
+      "startTime": 22,
+      "endTime": 45,
+      "description": "Voices clash over the roar of thunder. Physical proximity tightens near the precipice."
+    },
+    {
+      "id": "act-3",
+      "title": "Act III: The Plunge",
+      "startTime": 45,
+      "endTime": 70,
+      "description": "11:42 PM. The critical split second. Hands reach out. The void swallows the ledge."
+    },
+    {
+      "id": "act-4",
+      "title": "Act IV: The Residual Silence",
+      "startTime": 70,
+      "endTime": 90,
+      "description": "Sirens wail through the canyon of concrete. Evidence settles beneath the downpour."
+    }
+  ],
+  "perspectives": {
+    "witness": {
+      "id": "witness",
+      "name": "Marcus Ward",
+      "role": "The Observant Neighbor",
+      "actor": "Christian Bale (Placeholder Representation)",
+      "quote": "I saw both of his hands drive into her chest. He backed her to the edge and pushed.",
+      "cameraDescription": "Telephoto 600mm lens from South Tower 12th floor window, rain-streaked aperture, high focal depth, pan-and-scan framing.",
+      "location": "South Tower Apartment 12B (85 yards away)",
+      "psychologicalState": "Hyper-vigilant, convinced of guilt, clouded by parallax illusion",
+      "visualTheme": {
+        "primaryColor": "#38BDF8",
+        "accentColor": "#0284C7",
+        "lightingMood": "Cold Cyan & Rain Droplets on Lens",
+        "vignetteIntensity": 0.45,
+        "gradingFilter": "contrast(120%) hue-rotate(-10deg) saturate(85%)"
+      }
+    },
+    "suspect": {
+      "id": "suspect",
+      "name": "Julian Mercer",
+      "role": "The Accused Partner",
+      "actor": "Cillian Murphy (Placeholder Representation)",
+      "quote": "She stepped backwards into the dark. I screamed at her to stop and dove to grab her wrist!",
+      "cameraDescription": "Tight handheld medium shot, intimate claustrophobic depth, lens flare from maintenance floodlights.",
+      "location": "Blackwood Heights Roof Deck, North HVAC perimeter",
+      "psychologicalState": "Panicked, desperate, defensive, fighting accusations of murder",
+      "visualTheme": {
+        "primaryColor": "#EF4444",
+        "accentColor": "#DC2626",
+        "lightingMood": "Harsh Halogen Amber & Shadowed Silhouette",
+        "vignetteIntensity": 0.55,
+        "gradingFilter": "contrast(135%) saturate(110%) sepia(15%)"
+      }
+    },
+    "victim": {
+      "id": "victim",
+      "name": "Elena Vance",
+      "role": "The Deceased Auditor",
+      "actor": "Rebecca Ferguson (Placeholder Representation)",
+      "quote": "He didn't reach for my hands. He was clawing for the tape recorder in my pocket.",
+      "cameraDescription": "Slow-motion Dutch angle, wide anamorphic vista, ethereal rooftop perspective with surreal clarity.",
+      "location": "The Precipice, 14th Floor Parapet Wall",
+      "psychologicalState": "Calculated, vindictive, transitioning into sudden paralyzing terror",
+      "visualTheme": {
+        "primaryColor": "#F59E0B",
+        "accentColor": "#D97706",
+        "lightingMood": "Golden Noir & Ethereal Cityscape Luminescence",
+        "vignetteIntensity": 0.5,
+        "gradingFilter": "contrast(115%) saturate(105%) brightness(105%)"
+      }
+    }
+  },
+  "clues": [
+    {
+      "id": "clue-tether",
+      "title": "Severed Scaffolding Cable",
+      "perspectiveId": "suspect",
+      "appearsAt": 10,
+      "disappearsAt": 26,
+      "hotspot": {
+        "x": 68,
+        "y": 72,
+        "radius": 24,
+        "label": "Torn Cable"
+      },
+      "category": "physical",
+      "description": "A high-tensile steel-core safety cable attached to the window-washing rig, cleanly frayed at the eyelet connector.",
+      "detailedAnalysis": "Forensic microscopic inspection reveals stress fracture marks alongside clean serrated shears. The cable was subjected to sudden shearing force rather than slow gradual abrasion.",
+      "contradictions": {
+        "witness": "Marcus claims Elena stumbled backwards with no tripping hazard, implying Julian forced her balance over the ledge.",
+        "suspect": "Julian claims Elena caught her heel on the cable loop and jerked backward unexpectedly while shouting at him.",
+        "victim": "Elena's hidden micro-cam shows the tether was pre-clipped to an emergency harness beneath her trenchcoat—a stunt setup that failed."
+      },
+      "significance": "Determines whether her backward fall was an unintended trip, an intentional jump, or the consequence of a sabotaged harness.",
+      "icon": "Anchor"
+    },
+    {
+      "id": "clue-recorder",
+      "title": "Sony PCM-D10 Micro-Recorder",
+      "perspectiveId": "victim",
+      "appearsAt": 25,
+      "disappearsAt": 42,
+      "hotspot": {
+        "x": 42,
+        "y": 64,
+        "radius": 22,
+        "label": "Active Recorder"
+      },
+      "category": "digital",
+      "description": "Professional solid-state audio recording device nestled behind the secondary ventilation shaft, its tiny red LED pulsing in the darkness.",
+      "detailedAnalysis": "The recorder was initiated at 11:38 PM—four minutes before Julian arrived. It captured pristine uncompressed audio of Elena reviewing offshore account numbers and murmuring: 'Let him come. Let Marcus get the photo.'",
+      "contradictions": {
+        "witness": "Marcus had no idea any audio was being recorded; he believed he was a spontaneous bystander.",
+        "suspect": "Julian claims he lunged forward because she was waving her hands wildly, not realizing she had set a trap.",
+        "victim": "Elena positioned the recorder to capture Julian's extortion confession, deliberately provoking him into physical posture."
+      },
+      "significance": "Proves premeditation on Elena's part, confirming the rendezvous was an orchestrated confrontation rather than a random quarrel.",
+      "icon": "Mic"
+    },
+    {
+      "id": "clue-watch",
+      "title": "Julian's Smashed Chronograph",
+      "perspectiveId": "witness",
+      "appearsAt": 42,
+      "disappearsAt": 58,
+      "hotspot": {
+        "x": 51,
+        "y": 48,
+        "radius": 26,
+        "label": "Shattered Dial"
+      },
+      "category": "forensic",
+      "description": "Julian's vintage Omega chronograph, found on the parapet gravel with its sapphire crystal fractured and hands locked precisely at 11:41:48 PM.",
+      "detailedAnalysis": "Impact force was directed from the side rather than the face. Deep epidermal scratch marks on Julian's inner forearm suggest fingernail defensive wounds or a violent grip contest.",
+      "contradictions": {
+        "witness": "Marcus testifies Julian's arms were fully extended outward in a pushing motion, not defensive.",
+        "suspect": "Julian swears the watch broke when his wrist smashed against the granite ledge while trying to haul Elena back up.",
+        "victim": "Elena remembers seizing Julian's wrist as she slipped, trying desperately to use his body weight as counter-ballast."
+      },
+      "significance": "Crucial timing anchor indicating physical contact occurred exactly 12 seconds before Elena breached the outer railing.",
+      "icon": "Clock"
+    },
+    {
+      "id": "clue-envelope",
+      "title": "Waterproof Offshore Dossier",
+      "perspectiveId": "suspect",
+      "appearsAt": 60,
+      "disappearsAt": 76,
+      "hotspot": {
+        "x": 34,
+        "y": 55,
+        "radius": 24,
+        "label": "Submerged Manila Folder"
+      },
+      "category": "testimony",
+      "description": "Sealed mylar folder partially soaked in rain gravel near the fire door, containing signed escrow transfers totaling $18.4 million.",
+      "detailedAnalysis": "The signature on page 4 bears Julian's notary stamp dated three days prior, but Elena's signature is absent. Fingerprint dusting reveals only Elena's latent prints on the exterior envelope.",
+      "contradictions": {
+        "witness": "Marcus saw Julian drop a white envelope on the ground right after the fall, assuming it was a motive document.",
+        "suspect": "Julian says Elena brought the envelope to blackmail him, threatening to throw it or herself if he didn't sign the remainder.",
+        "victim": "Elena intended to exchange the dossier for Julian's public confession, having already uploaded digital duplicates to federal prosecutors."
+      },
+      "significance": "Supplies the commercial motive: millions of embezzled hedge fund capital that both parties were weaponizing.",
+      "icon": "FileText"
+    },
+    {
+      "id": "clue-camera-rig",
+      "title": "Marcus's Tripod Blindspot Angle",
+      "perspectiveId": "witness",
+      "appearsAt": 72,
+      "disappearsAt": 88,
+      "hotspot": {
+        "x": 22,
+        "y": 38,
+        "radius": 28,
+        "label": "Water Tower Angle"
+      },
+      "category": "physical",
+      "description": "Architectural sightline alignment from South Tower 12B toward Blackwood Heights rooftop reveals the cedar water tower partially obscures 35% of the parapet.",
+      "detailedAnalysis": "Laser range-finder recreation demonstrates that from Marcus's exact window angle, two figures standing within 18 inches of each other at the ledge overlap completely, creating the visual illusion of a push even if one person is pulling.",
+      "contradictions": {
+        "witness": "Marcus adamantly denies any obstruction, asserting his high-end glass gave 100% unobstructed clarity.",
+        "suspect": "Julian's defense team proved the water tower creates an 18-degree optical corridor dead zone.",
+        "victim": "Elena chose this specific corner of the roof precisely because she knew Marcus had a camera trained on that zone every night."
+      },
+      "significance": "Exposes the fatal flaw in the eyewitness testimony: perspective foreshortening distorted a desperate rescue attempt into a murder.",
+      "icon": "Camera"
+    }
+  ],
+  "dialogues": [
+    {
+      "id": "dia-1",
+      "perspectiveId": "witness",
+      "speaker": "Marcus Ward",
+      "text": "11:41 PM. I saw him back her right up against the edge. She had nowhere left to run.",
+      "subtext": "Looking through 600mm telephoto lens across the alleyway.",
+      "startTime": 4,
+      "endTime": 12,
+      "emotionalTone": "anxious"
+    },
+    {
+      "id": "dia-2",
+      "perspectiveId": "suspect",
+      "speaker": "Julian Mercer",
+      "text": "Elena, step back from the ledge! Look at me—listen to me! The money is yours, just take your hands off the railing!",
+      "subtext": "Wind whipping his coat, struggling against the rainstorm.",
+      "startTime": 4,
+      "endTime": 13,
+      "emotionalTone": "panicked"
+    },
+    {
+      "id": "dia-3",
+      "perspectiveId": "victim",
+      "speaker": "Elena Vance",
+      "text": "He thought I was bluffing. He thought I'd fold like all the others. But every word was going straight into the cloud.",
+      "subtext": "Checking the red LED on the Sony recorder by the ventilation duct.",
+      "startTime": 4,
+      "endTime": 14,
+      "emotionalTone": "calculating"
+    },
+    {
+      "id": "dia-4",
+      "perspectiveId": "witness",
+      "speaker": "Marcus Ward",
+      "text": "They were shouting. Even through double-glazed windows, I could see the rage in his face. His arms shot forward.",
+      "subtext": "Marcus dials 911 on his desk phone while keeping his eye glued to the viewfinder.",
+      "startTime": 16,
+      "endTime": 28,
+      "emotionalTone": "anxious"
+    },
+    {
+      "id": "dia-5",
+      "perspectiveId": "suspect",
+      "speaker": "Julian Mercer",
+      "text": "She was smiling. That cold, hollow smile. She said, 'You're already ruined, Julian.' Then her heel caught the maintenance wire.",
+      "subtext": "Voice cracking with adrenaline and retrospective terror.",
+      "startTime": 17,
+      "endTime": 30,
+      "emotionalTone": "panicked"
+    },
+    {
+      "id": "dia-6",
+      "perspectiveId": "victim",
+      "speaker": "Elena Vance",
+      "text": "The safety harness under my coat was rated for 300 pounds. All I needed was Marcus to take the shot of Julian cornering me.",
+      "subtext": "Staging the visual frame for the telephoto camera across the street.",
+      "startTime": 18,
+      "endTime": 32,
+      "emotionalTone": "calculating"
+    },
+    {
+      "id": "dia-7",
+      "perspectiveId": "witness",
+      "speaker": "Marcus Ward",
+      "text": "There was no hesitation. He lunged straight for her upper torso. A clean, deliberate thrust over the coping stone.",
+      "subtext": "Heart pounding as the camera captures the silhouette tumbling.",
+      "startTime": 36,
+      "endTime": 50,
+      "emotionalTone": "furious"
+    },
+    {
+      "id": "dia-8",
+      "perspectiveId": "suspect",
+      "speaker": "Julian Mercer",
+      "text": "I threw myself onto the wet gravel! My fingers brushed her sleeve—I had her wrist for half a second! Then the fabric tore!",
+      "subtext": "Looking down at his shredded cuffs and bleeding knuckles.",
+      "startTime": 37,
+      "endTime": 52,
+      "emotionalTone": "desperate"
+    },
+    {
+      "id": "dia-9",
+      "perspectiveId": "victim",
+      "speaker": "Elena Vance",
+      "text": "Julian didn't shove me. He reached for the recorder. But when I leaned back onto the wire, there was a sickening snap. The anchor bolt tore free from the masonry.",
+      "subtext": "The sudden realization that the safety rig has failed.",
+      "startTime": 38,
+      "endTime": 54,
+      "emotionalTone": "panicked"
+    },
+    {
+      "id": "dia-10",
+      "perspectiveId": "witness",
+      "speaker": "Marcus Ward",
+      "text": "Operator, this is Marcus Ward at 410 South 5th. Send homicide units immediately. I just watched a man commit murder on the roof.",
+      "subtext": "Speaking into the phone while watching Julian stand frozen on the edge.",
+      "startTime": 58,
+      "endTime": 72,
+      "emotionalTone": "anxious"
+    },
+    {
+      "id": "dia-11",
+      "perspectiveId": "suspect",
+      "speaker": "Julian Mercer",
+      "text": "I stood there in the downpour looking at my empty hands. Nobody is going to believe me. God help me, nobody is ever going to believe me.",
+      "subtext": "Collapsing against the brick parapet as distant sirens echo.",
+      "startTime": 60,
+      "endTime": 74,
+      "emotionalTone": "desperate"
+    },
+    {
+      "id": "dia-12",
+      "perspectiveId": "victim",
+      "speaker": "Elena Vance",
+      "text": "In the final seconds of falling, the city lights turn into streaks of gold. I wanted to destroy Julian Mercer. I never imagined I'd destroy myself.",
+      "subtext": "Surreal serenity as the master timeline concludes.",
+      "startTime": 62,
+      "endTime": 76,
+      "emotionalTone": "calm"
+    },
+    {
+      "id": "dia-13",
+      "perspectiveId": "witness",
+      "speaker": "Marcus Ward",
+      "text": "I have the memory cards locked in my safe. The camera doesn't lie. Or at least... that's what I kept telling myself.",
+      "subtext": "Reflecting on the water tower blindspot.",
+      "startTime": 78,
+      "endTime": 88,
+      "emotionalTone": "anxious"
+    },
+    {
+      "id": "dia-14",
+      "perspectiveId": "suspect",
+      "speaker": "Julian Mercer",
+      "text": "Check the roof. Check the cables! If forensics does their job, they'll find the truth. But truth is the first thing that drowns in rain.",
+      "subtext": "Hands trembling under the glare of emergency flashlights.",
+      "startTime": 78,
+      "endTime": 88,
+      "emotionalTone": "panicked"
+    },
+    {
+      "id": "dia-15",
+      "perspectiveId": "victim",
+      "speaker": "Elena Vance",
+      "text": "Every perspective tells a different truth. But only one truth survives the fall.",
+      "subtext": "Fade to black as rain washes the lens.",
+      "startTime": 78,
+      "endTime": 89,
+      "emotionalTone": "calm"
+    }
+  ],
+  "verdicts": {
+    "accident": {
+      "id": "accident",
+      "title": "Tragic Equipment Failure & Slip",
+      "tagline": "A lethal confluence of storm, severed wire, and desperate misjudgment.",
+      "summary": "You conclude that Julian Mercer attempted to save Elena Vance. While Elena was recklessly using the parapet to negotiate under extreme emotional pressure, the frayed scaffolding tether caught her heel and snapped under lateral tension. Julian lunged to catch her wrist, breaking his watch and scraping his arms, but rain and wet granite made rescue impossible.",
+      "keyCorroboratingClues": [
+        "clue-tether",
+        "clue-watch",
+        "clue-camera-rig"
+      ],
+      "cinematicResolutionTitle": "THE GRAVITY OF CHANCE",
+      "cinematicResolutionText": "Forensic ballistics and structural engineering reports validate the defense. The anchor bolt in the Blackwood Heights parapet was corroded by five years of unchecked water seepage. When Elena transferred her body weight onto the cable, the mortar crumbled under 180 foot-pounds of dynamic load. Julian's shattered watch and forearm contusions align with high-velocity grip resistance. Marcus's telephoto perspective was hopelessly compressed by the water tower obstruction, turning an agonizing reach for life into the phantom image of murder.",
+      "epilogue": {
+        "witness": "Marcus Ward recants his homicide statement after laser sightline tests prove his 12th-floor view suffered severe foreshortening. Haunted by the realization that his testimony nearly sent an innocent man to death row, he sells his photography equipment and vacates South Tower.",
+        "suspect": "Julian Mercer is cleared of murder charges but indicted for reckless financial mismanagement and securities fraud stemming from the offshore dossier. He serves four years in federal minimum security, permanently haunted by the memory of wet fingers slipping through his grasp.",
+        "victimAftermath": "Elena Vance's estate settles with building management for gross negligence regarding the corroded maintenance rig. Her offshore foundation distributes the recovered $18.4 million to corporate whistleblower defense funds."
+      },
+      "forensicAccuracy": 78,
+      "verdictRationale": "While physical mechanics support an accident, this verdict overlooks Elena's conscious premeditation revealed in the audio logs."
+    },
+    "murder": {
+      "id": "murder",
+      "title": "Premeditated Rooftop Homicide",
+      "tagline": "A desperate billionaire pushed to the brink of exposure removes the witness.",
+      "summary": "You conclude that Julian Mercer knowingly and forcefully hurled Elena Vance over the parapet. When confronted with the offshore dossier and realizing Elena had documented his multi-million dollar embezzlement, Julian calculated that her death would permanently bury the audit.",
+      "keyCorroboratingClues": [
+        "clue-envelope",
+        "clue-watch",
+        "clue-recorder"
+      ],
+      "cinematicResolutionTitle": "THE EXECUTION ON THE LEDGE",
+      "cinematicResolutionText": "The District Attorney presents Marcus Ward's high-resolution photographic burst sequence alongside the recovered $18.4 million transfer records. The prosecution argues Julian's defensive scratches were Elena's desperate attempts to claw at his arms as he used his superior body weight to thrust her over the 38-inch stone wall. The frayed scaffolding cable is presented as an intentional diversion created by Julian prior to the confrontation to fabricate an accidental fall defense.",
+      "epilogue": {
+        "witness": "Marcus Ward is celebrated in national press as the vigilant citizen who refused to look away. His telephoto photographs are exhibited in modern galleries as 'The Anatomy of a Crime.'",
+        "suspect": "Julian Mercer is convicted of Second-Degree Murder and sentenced to 25 years to life at Sing Sing Correctional Facility. He maintains his innocence in biennial parole hearings, insisting Elena engineered the situation to destroy him.",
+        "victimAftermath": "Elena Vance is memorialized as a martyr of financial transparency. An investigative journalism scholarship is established in her name at Columbia University."
+      },
+      "forensicAccuracy": 65,
+      "verdictRationale": "Compelling and morally intuitive, yet forensically challenged by the discovery of Elena's hidden harness clip and the sightline distortion of Marcus's vantage."
+    },
+    "manipulation": {
+      "id": "manipulation",
+      "title": "The Orchestrated Trap That Turned Fatal",
+      "tagline": "Elena orchestrated the perfect frame-job, but gravity rewrote the ending.",
+      "summary": "You uncover the complete, chilling truth: Elena Vance meticulously planned a staged attempted-murder scenario to destroy Julian Mercer forever. Knowing Marcus took photos from South Tower every night and had an optical blind spot, she clipped an emergency stunt tether to her hidden harness, planted the audio recorder, and baited Julian into lunging for the tape. But the compromised anchor bolt snapped under her weight, turning an elaborate theatrical trap into an inescapable death.",
+      "keyCorroboratingClues": [
+        "clue-recorder",
+        "clue-tether",
+        "clue-envelope",
+        "clue-camera-rig"
+      ],
+      "cinematicResolutionTitle": "THE ARCHITECT OF HER OWN TRAGEDY",
+      "cinematicResolutionText": "Digital forensics reconstruct the hidden audio file recovered from the Sony PCM-D10 recorder. At 11:39 PM, Elena's own voice murmurs: 'Marcus is at his window. Stage marks set.' Micro-camera analysis confirms she stepped backward intentionally, anticipating the tether would catch her at the 13th-floor window-washing gantry while Marcus's camera captured Julian's reaching hands in silhouette. Julian never pushed her; he was lunging for the micro-recorder. When the rusted masonry anchor sheared under her dynamic weight, Elena realized too late that she had written an ending from which there was no rehearsal.",
+      "epilogue": {
+        "witness": "Marcus Ward confronts the crushing realization that he was not an objective observer, but an unwitting prop in a meticulously scripted psychological revenge play.",
+        "suspect": "Julian Mercer is exonerated of murder but completely broken by the revelation of Elena's posthumous game. He retires into seclusion, unable to reconcile love, betrayal, and survivor's guilt.",
+        "victimAftermath": "The full audio transcripts leak to the public, igniting intense debate among criminologists and dramatists. Elena Vance enters urban folklore as the auditor who attempted to audit death itself."
+      },
+      "forensicAccuracy": 100,
+      "verdictRationale": "The definitive forensic truth: synthesizes all three perspectives, accounts for every physical clue, explains the sightline paradox, and reveals the true tragedy behind The Last Witness."
+    }
+  }
+}
